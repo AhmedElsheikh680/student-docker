@@ -2,6 +2,10 @@ docker container ls
 docker container ps
 docker build -t student-app .
 docker run --name student-container -d -p 8080:8080 student-app
+ docker run --name student-container -v D:\Docker\studnet-docker:/student -d -p 8080:8080 student-app
+ -v -> volumes
+ docker run --name student-container -v D:\\Docker\\studnet-docker:/student:ro -d -p 8080:8080 student-app
+:ro -> read only(نوع من انوالع ال volumes)
 docker rmi -f $(docker images -aq)        //if y want to remove all images
 docker rm $(docker ps -aq)               // if y want to remove all containers
 docker rm container-name -f       (f -> force)       // if y want to remove one image
@@ -27,4 +31,15 @@ COPY --from=build /student/target/studnet-docker.jar /student/target/studnet-doc
 # Expose the port the app will run on
 EXPOSE 8080
 # Command to run the application
+ENTRYPOINT ["java", "-jar", "/student/target/studnet-docker.jar"]
+
+======================================================================
+FROM openjdk:17-jre-slim
+FROM maven:latest AS build
+#COPY src /student/src
+#COPY pom.xml /student
+COPY . /student
+#RUN mvn -f /student/pom.xml clean package
+#RUN mvn -f /student/pom.xml clean install
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/student/target/studnet-docker.jar"]
