@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1")
 public class StudentController {
 
-    @GetMapping("/studnet")
+    @GetMapping("/student")
     public String studnet() {
-        return "Ahmed Mohamed Elsheikh";
+        return "Ahmed Mohamed Elsheikh!!!";
     }
 
     @GetMapping("/hello")
