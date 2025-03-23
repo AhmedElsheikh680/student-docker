@@ -1,0 +1,13 @@
+version: "3"
+services:
+  student-image:
+    container_name: student-container
+    build: .
+    volumes:
+      - .:/student:ro
+    ports:
+      - "8080:8080"
+    environment:
+      - MY_PHASE=uat
+    env_file:
+      - ./.env

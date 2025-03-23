@@ -1,0 +1,14 @@
+version: "3"
+services:
+  student-image:
+    container_name: student-container
+    build: .
+    volumes:
+      - .:/student:ro
+    ports:
+      - "7070:7070"
+    environment:
+      - PORT=7070
+      - MY_PHASE=test
+    env_file:
+      - ./.env

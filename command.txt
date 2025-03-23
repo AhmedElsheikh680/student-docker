@@ -15,6 +15,9 @@ docker rm $(docker ps -aq)               // if y want to remove all containers
 docker rm container-name -f       (f -> force)       // if y want to remove one image
 docker stop container-id
 docker exec -it container-name bash (-it -> interactive terminal) // if y want to open container in bashdocker
+docker-compose -f docker-compose up
+docker-compose -f docker-compose down
+docker-compose -f docker-compose-dev.yml up --build
 
 
 ===============================================

@@ -15,9 +15,15 @@ public class StudentController {
     @Value("${age}")
     private String age;
 
+    @Value("${phase}")
+    private String phase;
+    @Value("${server.port}")
+    private String port;
+
     @GetMapping("/student")
     public String studnet() {
-        return "My Name Is "+ name + " And Age Is "+ age;
+        return "My Name Is "+ name + " And Age Is "+ age
+                + " And Phase Is "+phase +" And Port Is "+ port;
     }
 
     @GetMapping("/hello")
