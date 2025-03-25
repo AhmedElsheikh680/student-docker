@@ -21,8 +21,10 @@ services:
     image: mysql
     restart: always
     volumes:
-      - /home/usr/Desktop/db:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "3307:3306"
+volumes:
+  db:

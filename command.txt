@@ -18,6 +18,7 @@ docker exec -it container-name bash (-it -> interactive terminal) // if y want t
 docker-compose -f docker-compose up
 docker-compose -f docker-compose down
 docker-compose -f docker-compose-dev.yml up --build
+docker-compose -f docker-compose-dev.yml up --build -v  // v ->كده هيعمل remove volumes
 
 
 ===============================================
