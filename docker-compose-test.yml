@@ -1,4 +1,4 @@
-version: "3"
+#version: "3"
 services:
   student-image:
     container_name: student-container
@@ -10,5 +10,19 @@ services:
     environment:
       - PORT=7070
       - MY_PHASE=test
+      - IP=db
+      - PORT=3306
+      - DB_NAME=book
+      - USERNAME=root
+      - PASSWORD=root
     env_file:
       - ./.env
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - /home/usr/Desktop/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"

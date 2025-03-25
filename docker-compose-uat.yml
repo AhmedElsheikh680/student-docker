@@ -8,6 +8,7 @@ services:
     ports:
       - "8080:8080"
     environment:
+      - port=8080
       - MY_PHASE=uat
     env_file:
       - ./.env

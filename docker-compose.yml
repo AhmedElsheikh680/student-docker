@@ -1,0 +1,7 @@
+version: "3"
+services:
+  student-image:
+    container_name: student-container
+    build: .
+    env_file:
+      - ./.env

@@ -6,9 +6,9 @@ services:
     volumes:
       - .:/student:ro
     ports:
-      - "8800:8800"
+      - "8085:8085"
     environment:
-      - port=8800
-      - MY_PHASE=uat
+      - port=8085
+      - MY_PHASE=prod
     env_file:
       - ./.env
